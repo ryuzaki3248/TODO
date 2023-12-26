@@ -15,7 +15,7 @@ form.addEventListener("submit",function(event){
 	add();
 });
  
-function add(todo){
+function add(todo) {
   let todoText = input.value;
 
   if (todo) {
@@ -33,6 +33,12 @@ function add(todo){
     li.remove();
 		saveData();
 	});
+
+	li.addEventListener("click", function () {
+  li.classList.toggle
+	("text-decoration-line-through");
+	});
+
 	ul.appendChild(li);
 	input.value ="";
 	saveData();
