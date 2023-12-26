@@ -21,11 +21,18 @@ function add(todo){
   if (todo) {
   todoText = todo;
 	}
-	
-	if (todoText.length > 0) {
+
+	if (todoText) {
   const li = document.createElement("li");
 	li.innerText = todoText;
 	li.classList.add("list-group-item");
+
+	li.addEventListener("contextmenu", function
+	(event) {
+    event.preventDefault();
+    li.remove();
+		saveData();
+	});
 	ul.appendChild(li);
 	input.value ="";
 	saveData();
